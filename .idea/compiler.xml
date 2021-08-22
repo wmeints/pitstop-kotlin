@@ -10,6 +10,7 @@
         <module name="vehicles" />
         <module name="customers" />
         <module name="workshop" />
+        <module name="notifications" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="customers" options="-parameters" />
       <module name="invoicing" options="-parameters" />
+      <module name="notifications" options="-parameters" />
       <module name="vehicles" options="-parameters" />
       <module name="workshop" options="-parameters" />
     </option>

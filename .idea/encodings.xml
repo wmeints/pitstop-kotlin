@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/customers/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/invoicing/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/invoicing/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notifications/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notifications/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vehicles/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vehicles/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/workshop/src/main/kotlin" charset="UTF-8" />
