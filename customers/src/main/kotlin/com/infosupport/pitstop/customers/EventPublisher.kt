@@ -5,7 +5,7 @@ import org.eclipse.microprofile.reactive.messaging.Emitter
 import javax.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
-class EventPublisher(@Channel("customers") private val customerRegisteredEmitter: Emitter<CustomerRegistered>) {
+class EventPublisher(@Channel("customer-registered") private val customerRegisteredEmitter: Emitter<CustomerRegistered>) {
     fun publishCustomerRegistered(evt: CustomerRegistered) {
         customerRegisteredEmitter.send(evt)
     }
