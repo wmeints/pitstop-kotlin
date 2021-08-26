@@ -6,6 +6,7 @@ import com.infosupport.pitstop.workshop.entities.Vehicle
 import com.infosupport.pitstop.workshop.repositories.CustomerRepository
 import com.infosupport.pitstop.workshop.repositories.JobRepository
 import com.infosupport.pitstop.workshop.repositories.VehicleRepository
+import com.infosupport.pitstop.workshop.services.EventPublisher
 import com.infosupport.pitstop.workshop.services.WorkshopPlanning
 import java.net.URI
 import javax.ws.rs.Consumes
@@ -18,7 +19,8 @@ import javax.ws.rs.core.Response
 class JobsResource(
     private val jobRepository: JobRepository,
     private val vehicleRepository: VehicleRepository,
-    private val customerRepository: CustomerRepository
+    private val customerRepository: CustomerRepository,
+    private val eventPublisher: EventPublisher
 ) {
     @POST
     @Consumes(APPLICATION_JSON)
@@ -41,6 +43,7 @@ class JobsResource(
 
         val job = planning.scheduleJob(vehicle,customer, Timeslot(cmd.startDate, cmd.endDate), cmd.description)
         jobRepository.persist(job)
+        eventPublisher.publishJobCompleted(job)
 
         return Response.accepted().build()
     }
