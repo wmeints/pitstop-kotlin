@@ -6,5 +6,6 @@ create table job(
     actualstartdate date null,
     actualenddate date null,
     plannedstartdate date not null,
-    plannedenddate date not null
+    plannedenddate date not null,
+    notes text null
 )

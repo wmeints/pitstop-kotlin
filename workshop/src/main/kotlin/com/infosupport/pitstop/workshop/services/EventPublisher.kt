@@ -2,11 +2,13 @@ package com.infosupport.pitstop.workshop.services
 
 import com.infosupport.pitstop.workshop.entities.Job
 import com.infosupport.pitstop.workshop.events.JobCompleted
+import org.eclipse.microprofile.reactive.messaging.Channel
 import org.eclipse.microprofile.reactive.messaging.Emitter
+import org.eclipse.microprofile.reactive.messaging.Outgoing
 import javax.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
-class EventPublisher(private val jobCompletedEmitter: Emitter<JobCompleted>) {
+class EventPublisher(@Channel("job-completed") private val jobCompletedEmitter: Emitter<JobCompleted>) {
     fun publishJobCompleted(job: Job) {
         val actualTimeslot = job.actualTimeslot ?: throw IllegalArgumentException("Job is not yet completed.")
 
