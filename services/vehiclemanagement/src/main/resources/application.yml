@@ -1,0 +1,4 @@
+spring.datasource:
+  url: jdbc:postgresql://${DB_HOSTNAME}:5432/vehiclemanagement
+  username: ${DB_USER}
+  password: ${DB_PASSWORD}
